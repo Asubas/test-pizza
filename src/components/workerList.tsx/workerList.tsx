@@ -1,22 +1,19 @@
 import "./WorkerList.scss";
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { IWorker } from "../../types/workerInterface";
-import { workerList } from "../../utils/workerList";
 import { SortContainer } from "../sortContainer/sortContainer";
+import { useSelector } from "react-redux";
+import { RootState } from "../../app/store";
+import { FilterContainer } from "../filterContainer/filterContainer";
 
 function WorkerList() {
-  const [workers, setWorkers] = useState<IWorker[] | null>(null);
-
-  useEffect(() => {
-    workerList().then((res) => setWorkers(res));
-  }, []);
+  const workers = useSelector((state: RootState) => state.workers.workerList);
 
   return (
     <>
       {workers ? (
         <div className="worker-list">
           <SortContainer />
+          <FilterContainer />
           {workers.map((element) => (
             <div key={element.id}>
               <Link to={`/worker/${element.id}`}>{element.name}</Link>
