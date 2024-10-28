@@ -1,0 +1,17 @@
+.worker-list {
+  display: flex;
+  flex-direction: column;
+
+  div {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+
+    .worker-name {
+      margin: auto;
+    }
+    .worker-tel {
+      margin-left: auto;
+    }
+  }
+}
