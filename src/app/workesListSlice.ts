@@ -1,9 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { IWorker } from "../types/workerInterface";
+
 export const workerListSlice = createSlice({
   name: "workersListSlice",
   initialState: {
     workerList: [] as IWorker[],
+    selectedRole: "",
   },
   reducers: {
     setWorkers: (state, action) => {
@@ -26,16 +28,15 @@ export const workerListSlice = createSlice({
         return dateA - dateB;
       });
     },
-    filterWorkerByRole: (state, action) => {
-      const role = action.payload;
-      if (!role) {
-        return;
-      }
-      state.workerList = state.workerList.filter(
-        (worker) => worker.role === role
-      );
+    addToArchive: (state, action) => {
+      const workerId = action.payload;
+      state.workerList = state.workerList.map((worker) => {
+        if (worker.id === workerId) {
+          return { ...worker, isArchive: !worker.isArchive };
+        }
+        return worker;
+      });
     },
-    filterWorkerByStatus: (state) => {},
   },
 });
 
@@ -44,8 +45,7 @@ export const {
   addWorker,
   sortWorkerByBirthday,
   sortWorkerByName,
-  filterWorkerByRole,
-  filterWorkerByStatus,
+  addToArchive,
 } = workerListSlice.actions;
 
 export default workerListSlice.reducer;

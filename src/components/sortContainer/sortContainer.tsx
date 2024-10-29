@@ -1,14 +1,21 @@
 import { useDispatch } from "react-redux";
+import { memo, useCallback } from "react";
 import {
   sortWorkerByBirthday,
   sortWorkerByName,
-} from "../../slices/workesListSlice";
+} from "../../app/workesListSlice";
 
-function SortContainer() {
+const SortContainer = memo(() => {
   const dispatch = useDispatch();
 
-  const handleSortByName = () => dispatch(sortWorkerByName());
-  const handleSortByBirthday = () => dispatch(sortWorkerByBirthday());
+  const handleSortByName = useCallback(
+    () => dispatch(sortWorkerByName()),
+    [dispatch]
+  );
+  const handleSortByBirthday = useCallback(
+    () => dispatch(sortWorkerByBirthday()),
+    [dispatch]
+  );
 
   return (
     <>
@@ -20,6 +27,6 @@ function SortContainer() {
       </button>
     </>
   );
-}
+});
 
 export { SortContainer };

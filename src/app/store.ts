@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import workerReducer from "../slices/workesListSlice";
+import workerReducer from "./workesListSlice";
 
 export const store = configureStore({
   reducer: {
