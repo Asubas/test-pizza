@@ -1,0 +1,14 @@
+.newWorker-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+
+  span {
+    color: red;
+  }
+}

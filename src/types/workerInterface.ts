@@ -6,3 +6,12 @@ export interface IWorker {
   phone: string;
   birthday: string;
 }
+
+export interface INewWorker {
+  id: number;
+  name: string;
+  isArchive: boolean;
+  role: "cook" | "driver" | "waiter";
+  phone: string;
+  birthday: string;
+}

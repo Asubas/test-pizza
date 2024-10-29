@@ -44,33 +44,38 @@ const WorkerList = memo(() => {
   return (
     <>
       {arrayWorkers ? (
-        <ul className="worker-list">
+        <>
           <SortContainer />
           <FilterContainer
             filterByJob={filterByJob}
             filterByArchive={filterByArchive}
           />
-          {arrayWorkers.map((element) => (
-            <li key={element.id}>
-              <Link className="worker-name" to={`/worker/${element.id}`}>
-                {element.name}
-              </Link>
-              <label className="worker-archived" htmlFor={`${element.id}`}>
-                В архиве
-                <input
-                  id={`${element.id}`}
-                  type="checkbox"
-                  onChange={handleClickArchive}
-                  checked={element.isArchive}
-                />
-              </label>
-              <span className="worker-role">{element.role}</span>
-              <span className="worker-tel">{element.phone}</span>
-            </li>
-          ))}
-        </ul>
+          <ul className="worker-list">
+            {arrayWorkers.map((element) => (
+              <li key={element.id}>
+                <Link className="worker-name" to={`/worker/${element.id}`}>
+                  {element.name}
+                </Link>
+                <label className="worker-archived" htmlFor={`${element.id}`}>
+                  В архиве
+                  <input
+                    id={`${element.id}`}
+                    type="checkbox"
+                    onChange={handleClickArchive}
+                    checked={element.isArchive}
+                  />
+                </label>
+                <span className="worker-role">{element.role}</span>
+                <span className="worker-tel">{element.phone}</span>
+              </li>
+            ))}
+          </ul>
+          <Link className="newWorker-link" to={"/worker/new"}>
+            Добавить нового работника
+          </Link>
+        </>
       ) : (
-        <div>Hello world</div>
+        <div>Список работников пустой!</div>
       )}
     </>
   );

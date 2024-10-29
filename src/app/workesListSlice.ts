@@ -5,13 +5,14 @@ export const workerListSlice = createSlice({
   name: "workersListSlice",
   initialState: {
     workerList: [] as IWorker[],
-    selectedRole: "",
   },
   reducers: {
     setWorkers: (state, action) => {
       state.workerList = action.payload;
     },
-    addWorker: (state) => {},
+    addWorker: (state, action) => {
+      state.workerList.push(action.payload);
+    },
     sortWorkerByName: (state) => {
       state.workerList = state.workerList.slice().sort((a, b) => {
         return a.name.localeCompare(b.name);
