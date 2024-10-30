@@ -13,6 +13,12 @@ export const workerListSlice = createSlice({
     addWorker: (state, action) => {
       state.workerList.push(action.payload);
     },
+    editWorker: (state, action) => {
+      const { id, editWorker } = action.payload;
+      state.workerList = state.workerList.map((worker) => {
+        return worker.id === id ? { ...worker, ...editWorker } : worker;
+      });
+    },
     sortWorkerByName: (state) => {
       state.workerList = state.workerList.slice().sort((a, b) => {
         return a.name.localeCompare(b.name);
@@ -44,6 +50,7 @@ export const workerListSlice = createSlice({
 export const {
   setWorkers,
   addWorker,
+  editWorker,
   sortWorkerByBirthday,
   sortWorkerByName,
   addToArchive,

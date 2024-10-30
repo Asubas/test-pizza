@@ -8,7 +8,7 @@ export interface IWorker {
 }
 
 export interface INewWorker {
-  id: number;
+  id?: number;
   name: string;
   isArchive: boolean;
   role: "cook" | "driver" | "waiter";

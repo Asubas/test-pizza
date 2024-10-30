@@ -1,12 +1,12 @@
 import "./WorkerList.scss";
 import { Link } from "react-router-dom";
-import { SortContainer } from "../sortContainer/sortContainer";
+import { SortContainer } from "../../sortContainer/sortContainer";
 import { useDispatch, useSelector } from "react-redux";
-import { FilterContainer } from "../filterContainer/filterContainer";
-import { addToArchive } from "../../app/workesListSlice";
+import { FilterContainer } from "../../filterContainer/filterContainer";
+import { addToArchive } from "../../../app/workesListSlice";
 import { ChangeEvent, memo, useCallback, useEffect, useReducer } from "react";
-import { RootState } from "../../app/store";
-import { initialState, reducer } from "../../utils/reducer";
+import { RootState } from "../../../app/store";
+import { initialState, reducer } from "../../../utils/reducer";
 
 const WorkerList = memo(() => {
   const workers = useSelector((state: RootState) => state.workers.workerList);
