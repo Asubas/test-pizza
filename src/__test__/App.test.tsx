@@ -13,8 +13,8 @@ describe("Render App component", () => {
       </Provider>
     </BrowserRouter>
   );
-});
 
-test("Should be correct render", () => {
-  expect(screen.getByText("Должность")).toBeInTheDocument();
+  test("Should be correct render", () => {
+    expect(screen.getByText("Должность")).toBeInTheDocument();
+  });
 });

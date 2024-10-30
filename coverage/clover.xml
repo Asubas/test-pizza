@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1730293990013" clover="3.2.0">
-  <project timestamp="1730293990013" name="All files">
-    <metrics statements="151" coveredstatements="92" conditionals="52" coveredconditionals="1" methods="41" coveredmethods="18" elements="244" coveredelements="111" complexity="0" loc="151" ncloc="151" packages="9" files="12" classes="12"/>
+<coverage generated="1730314893277" clover="3.2.0">
+  <project timestamp="1730314893277" name="All files">
+    <metrics statements="151" coveredstatements="95" conditionals="52" coveredconditionals="2" methods="41" coveredmethods="20" elements="244" coveredelements="117" complexity="0" loc="151" ncloc="151" packages="9" files="12" classes="12"/>
     <package name="src">
-      <metrics statements="21" coveredstatements="19" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
-      <file name="App.tsx" path="C:\Users\ivanin_aa.GULBAHARRUS\Desktop\личное\test-pizza\src\App.tsx">
+      <metrics statements="21" coveredstatements="20" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+      <file name="App.tsx" path="C:\Users\Алексей\Desktop\MyCodes\test-pizza\src\App.tsx">
         <metrics statements="19" coveredstatements="18" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -26,24 +26,24 @@
         <line num="26" count="1" type="stmt"/>
         <line num="36" count="1" type="stmt"/>
       </file>
-      <file name="error-page.tsx" path="C:\Users\ivanin_aa.GULBAHARRUS\Desktop\личное\test-pizza\src\error-page.tsx">
-        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="2" count="0" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
+      <file name="error-page.tsx" path="C:\Users\Алексей\Desktop\MyCodes\test-pizza\src\error-page.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
       </file>
     </package>
     <package name="src.app">
       <metrics statements="25" coveredstatements="12" conditionals="7" coveredconditionals="0" methods="10" coveredmethods="3"/>
-      <file name="store.ts" path="C:\Users\ivanin_aa.GULBAHARRUS\Desktop\личное\test-pizza\src\app\store.ts">
+      <file name="store.ts" path="C:\Users\Алексей\Desktop\MyCodes\test-pizza\src\app\store.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="2" type="stmt"/>
-        <line num="2" count="2" type="stmt"/>
-        <line num="4" count="2" type="stmt"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
       </file>
-      <file name="workesListSlice.ts" path="C:\Users\ivanin_aa.GULBAHARRUS\Desktop\личное\test-pizza\src\app\workesListSlice.ts">
+      <file name="workesListSlice.ts" path="C:\Users\Алексей\Desktop\MyCodes\test-pizza\src\app\workesListSlice.ts">
         <metrics statements="22" coveredstatements="9" conditionals="7" coveredconditionals="0" methods="10" coveredmethods="3"/>
-        <line num="1" count="2" type="stmt"/>
-        <line num="4" count="2" type="stmt"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
         <line num="19" count="0" type="stmt"/>
@@ -62,13 +62,13 @@
         <line num="47" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="48" count="0" type="stmt"/>
         <line num="50" count="0" type="stmt"/>
-        <line num="56" count="2" type="stmt"/>
-        <line num="65" count="2" type="stmt"/>
+        <line num="56" count="3" type="stmt"/>
+        <line num="65" count="3" type="stmt"/>
       </file>
     </package>
     <package name="src.components.filterContainer">
       <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-      <file name="filterContainer.tsx" path="C:\Users\ivanin_aa.GULBAHARRUS\Desktop\личное\test-pizza\src\components\filterContainer\filterContainer.tsx">
+      <file name="filterContainer.tsx" path="C:\Users\Алексей\Desktop\MyCodes\test-pizza\src\components\filterContainer\filterContainer.tsx">
         <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
@@ -83,7 +83,7 @@
     </package>
     <package name="src.components.sortContainer">
       <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-      <file name="sortContainer.tsx" path="C:\Users\ivanin_aa.GULBAHARRUS\Desktop\личное\test-pizza\src\components\sortContainer\sortContainer.tsx">
+      <file name="sortContainer.tsx" path="C:\Users\Алексей\Desktop\MyCodes\test-pizza\src\components\sortContainer\sortContainer.tsx">
         <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
@@ -100,7 +100,7 @@
     </package>
     <package name="src.components.workers">
       <metrics statements="25" coveredstatements="6" conditionals="27" coveredconditionals="0" methods="3" coveredmethods="0"/>
-      <file name="workerForm.tsx" path="C:\Users\ivanin_aa.GULBAHARRUS\Desktop\личное\test-pizza\src\components\workers\workerForm.tsx">
+      <file name="workerForm.tsx" path="C:\Users\Алексей\Desktop\MyCodes\test-pizza\src\components\workers\workerForm.tsx">
         <metrics statements="25" coveredstatements="6" conditionals="27" coveredconditionals="0" methods="3" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -131,7 +131,7 @@
     </package>
     <package name="src.components.workers.editWorker">
       <metrics statements="11" coveredstatements="4" conditionals="1" coveredconditionals="0" methods="3" coveredmethods="0"/>
-      <file name="editWorker.tsx" path="C:\Users\ivanin_aa.GULBAHARRUS\Desktop\личное\test-pizza\src\components\workers\editWorker\editWorker.tsx">
+      <file name="editWorker.tsx" path="C:\Users\Алексей\Desktop\MyCodes\test-pizza\src\components\workers\editWorker\editWorker.tsx">
         <metrics statements="11" coveredstatements="4" conditionals="1" coveredconditionals="0" methods="3" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -148,7 +148,7 @@
     </package>
     <package name="src.components.workers.newWorker">
       <metrics statements="6" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-      <file name="newWorker.tsx" path="C:\Users\ivanin_aa.GULBAHARRUS\Desktop\личное\test-pizza\src\components\workers\newWorker\newWorker.tsx">
+      <file name="newWorker.tsx" path="C:\Users\Алексей\Desktop\MyCodes\test-pizza\src\components\workers\newWorker\newWorker.tsx">
         <metrics statements="6" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -160,7 +160,7 @@
     </package>
     <package name="src.components.workers.workerList">
       <metrics statements="28" coveredstatements="20" conditionals="12" coveredconditionals="1" methods="8" coveredmethods="3"/>
-      <file name="workerList.tsx" path="C:\Users\ivanin_aa.GULBAHARRUS\Desktop\личное\test-pizza\src\components\workers\workerList\workerList.tsx">
+      <file name="workerList.tsx" path="C:\Users\Алексей\Desktop\MyCodes\test-pizza\src\components\workers\workerList\workerList.tsx">
         <metrics statements="28" coveredstatements="20" conditionals="12" coveredconditionals="1" methods="8" coveredmethods="3"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -193,8 +193,8 @@
       </file>
     </package>
     <package name="src.utils">
-      <metrics statements="15" coveredstatements="8" conditionals="5" coveredconditionals="0" methods="5" coveredmethods="3"/>
-      <file name="reducer.ts" path="C:\Users\ivanin_aa.GULBAHARRUS\Desktop\личное\test-pizza\src\utils\reducer.ts">
+      <metrics statements="15" coveredstatements="10" conditionals="5" coveredconditionals="1" methods="5" coveredmethods="4"/>
+      <file name="reducer.ts" path="C:\Users\Алексей\Desktop\MyCodes\test-pizza\src\utils\reducer.ts">
         <metrics statements="7" coveredstatements="2" conditionals="4" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="14" count="1" type="stmt"/>
         <line num="21" count="0" type="cond" truecount="0" falsecount="4"/>
@@ -204,16 +204,16 @@
         <line num="29" count="0" type="stmt"/>
         <line num="33" count="1" type="stmt"/>
       </file>
-      <file name="workerList.ts" path="C:\Users\ivanin_aa.GULBAHARRUS\Desktop\личное\test-pizza\src\utils\workerList.ts">
-        <metrics statements="8" coveredstatements="6" conditionals="1" coveredconditionals="0" methods="4" coveredmethods="3"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="6" count="1" type="cond" truecount="0" falsecount="1"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
-        <line num="16" count="1" type="stmt"/>
-        <line num="20" count="1" type="stmt"/>
+      <file name="workerList.ts" path="C:\Users\Алексей\Desktop\MyCodes\test-pizza\src\utils\workerList.ts">
+        <metrics statements="8" coveredstatements="8" conditionals="1" coveredconditionals="1" methods="4" coveredmethods="4"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="6" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
       </file>
     </package>
   </project>
