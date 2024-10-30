@@ -1,5 +1,5 @@
 import "./filterContainer.scss";
-import { memo } from "react";
+import { memo, useCallback } from "react";
 
 const FilterContainer = memo(
   ({
@@ -9,14 +9,18 @@ const FilterContainer = memo(
     filterByJob: (job: string) => void;
     filterByArchive: (inArchive: string) => void;
   }) => {
-    const handleSortByJob = (event: React.ChangeEvent<HTMLSelectElement>) => {
-      filterByJob(event.target.value);
-    };
-    const handleSortByArchive = (
-      event: React.ChangeEvent<HTMLSelectElement>,
-    ) => {
-      filterByArchive(event.target.value);
-    };
+    const handleSortByJob = useCallback(
+      (event: React.ChangeEvent<HTMLSelectElement>) => {
+        filterByJob(event.target.value);
+      },
+      [filterByJob]
+    );
+    const handleSortByArchive = useCallback(
+      (event: React.ChangeEvent<HTMLSelectElement>) => {
+        filterByArchive(event.target.value);
+      },
+      [filterByArchive]
+    );
 
     return (
       <div className="sort-section-select">
@@ -28,14 +32,14 @@ const FilterContainer = memo(
           <option value="driver">Водитель</option>
         </select>
         <label htmlFor="archive">Архив</label>
-        <select name="city" id="archive" onChange={handleSortByArchive}>
+        <select name="archive" id="archive" onChange={handleSortByArchive}>
           <option value="">-- Сортировать по архиву --</option>
           <option value="inArchive">В архиве</option>
           <option value="noArchive">Не в архиве</option>
         </select>
       </div>
     );
-  },
+  }
 );
 
 export { FilterContainer };
