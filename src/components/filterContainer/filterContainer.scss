@@ -1,0 +1,5 @@
+@use "../../App.scss" as *;
+
+.sort-section-select {
+  @include flex-positioning(center, center, column);
+}

@@ -1,4 +1,4 @@
-import "./WorkerList.scss";
+import "./workerList.scss";
 import { Link } from "react-router-dom";
 import { SortContainer } from "../../sortContainer/sortContainer";
 import { useDispatch, useSelector } from "react-redux";
@@ -13,9 +13,12 @@ const WorkerList = memo(() => {
   const dispatch = useDispatch();
   const [stateReducer, dispatchReducer] = useReducer(reducer, initialState);
 
-  const handleClickArchive = (event: ChangeEvent<HTMLInputElement>) => {
-    dispatch(addToArchive(Number(event.target.id)));
-  };
+  const handleClickArchive = useCallback(
+    (event: ChangeEvent<HTMLInputElement>) => {
+      dispatch(addToArchive(Number(event.target.id)));
+    },
+    [dispatch],
+  );
 
   const filterByJob = useCallback((job: string) => {
     dispatchReducer({ type: "filteredByJob", payload: job });
@@ -47,34 +50,38 @@ const WorkerList = memo(() => {
     <>
       {arrayWorkers ? (
         <>
-          <SortContainer />
-          <FilterContainer
-            filterByJob={filterByJob}
-            filterByArchive={filterByArchive}
-          />
-          <ul className="worker-list">
-            {arrayWorkers.map((element) => (
-              <li key={element.id}>
-                <Link className="worker-name" to={`/worker/${element.id}`}>
-                  {element.name}
-                </Link>
-                <label className="worker-archived" htmlFor={`${element.id}`}>
-                  В архиве
-                  <input
-                    id={`${element.id}`}
-                    type="checkbox"
-                    onChange={handleClickArchive}
-                    checked={element.isArchive}
-                  />
-                </label>
-                <span className="worker-role">{element.role}</span>
-                <span className="worker-tel">{element.phone}</span>
-              </li>
-            ))}
-          </ul>
-          <Link className="newWorker-link" to={"/worker/new"}>
-            Добавить нового работника
-          </Link>
+          <div className="app-container">
+            <div className="sort-section">
+              <SortContainer />
+              <FilterContainer
+                filterByJob={filterByJob}
+                filterByArchive={filterByArchive}
+              />
+              <Link className="newWorker-link" to={"/worker/new"}>
+                Добавить нового работника
+              </Link>
+            </div>
+            <ul className="worker-list">
+              {arrayWorkers.map((element) => (
+                <li key={element.id}>
+                  <Link className="worker-name" to={`/worker/${element.id}`}>
+                    {element.name}
+                  </Link>
+                  <label className="worker-archived" htmlFor={`${element.id}`}>
+                    Архив
+                    <input
+                      id={`${element.id}`}
+                      type="checkbox"
+                      onChange={handleClickArchive}
+                      checked={element.isArchive}
+                    />
+                  </label>
+                  <span className="worker-role">{element.role}</span>
+                  <span className="worker-tel">{element.phone}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </>
       ) : (
         <div>Список работников пустой!</div>

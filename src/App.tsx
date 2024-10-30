@@ -1,4 +1,3 @@
-import "./App.scss";
 import { Route, Routes } from "react-router-dom";
 import { EditWorker } from "./components/workers/editWorker/editWorker";
 import { ErrorPage } from "./error-page";
@@ -7,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { setWorkers } from "./app/workesListSlice";
 import { workerList } from "./utils/workerList";
 import { NewWorker } from "./components/workers/newWorker/newWorker";
-import { WorkerList } from "./components/workers/workerList.tsx/workerList";
+import { WorkerList } from "./components/workers/workerList/workerList";
 
 function App() {
   const dispatch = useDispatch();

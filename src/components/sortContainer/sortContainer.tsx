@@ -10,20 +10,20 @@ const SortContainer = memo(() => {
 
   const handleSortByName = useCallback(
     () => dispatch(sortWorkerByName()),
-    [dispatch]
+    [dispatch],
   );
   const handleSortByBirthday = useCallback(
     () => dispatch(sortWorkerByBirthday()),
-    [dispatch]
+    [dispatch],
   );
 
   return (
     <>
       <button type="button" onClick={handleSortByName}>
-        По Имени
+        Сортировать по имени
       </button>
       <button type="button" onClick={handleSortByBirthday}>
-        По дате рождения
+        Сортировать по дате рождения
       </button>
     </>
   );

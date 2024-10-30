@@ -1,0 +1,69 @@
+@use "../../../App.scss" as *;
+
+.app-container {
+  @include flex-positioning(center, center, column);
+  gap: 1.5rem;
+  width: 70%;
+  margin: auto;
+
+  @media (max-width: 460px) {
+    width: 100%;
+  }
+}
+
+.sort-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  background-color: $container-color;
+  font-size: 1.5rem;
+  padding: 0.6rem;
+  gap: 1rem;
+
+  .sort-section-select,
+  .newWorker-link {
+    grid-column: -1 / 1;
+  }
+}
+
+.worker-list {
+  @include flex-positioning(center, normal, column);
+  gap: 1rem;
+  width: 100%;
+
+  li {
+    background-color: $container-color;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(4, 1fr);
+    position: relative;
+    height: 5rem;
+    text-align: center;
+    justify-content: center;
+    border: 1px solid black;
+    padding: 0.6rem;
+
+    .worker-role {
+      margin: auto;
+      grid-column-start: 2;
+      grid-row-start: 1;
+    }
+    .worker-tel {
+      margin-left: auto;
+      @include flex-positioning;
+      grid-column-start: 3;
+      grid-row-start: 1;
+    }
+
+    .worker-archived {
+      @include flex-positioning;
+      grid-column-start: 4;
+      cursor: pointer;
+
+      & input {
+        margin: 0 1rem;
+        cursor: pointer;
+      }
+    }
+  }
+}

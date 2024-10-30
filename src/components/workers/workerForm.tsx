@@ -41,7 +41,7 @@ function WorkerForm({
   return (
     <>
       <form
-        className="newWorker-form"
+        className="workerForm-form"
         onSubmit={handleSubmit(handleFormSubmit)}
       >
         <label htmlFor="name">Введите имя сотрудника</label>
@@ -105,13 +105,13 @@ function WorkerForm({
           <option value="driver">Водитель</option>
         </select>
         {errors.role && <span>{errors.role.message}</span>}
-        <label>
+        <label className="workerForm-checkbox">
           <input
             {...register("isArchive")}
             type="checkbox"
             defaultChecked={worker ? worker.isArchive : false}
           />
-          Добавить в архив?
+          Архив
         </label>
         <button type="submit">
           {edit ? "Изменить данные" : "Добавить сотрудника"}
