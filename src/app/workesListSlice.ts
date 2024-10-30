@@ -5,6 +5,8 @@ export const workerListSlice = createSlice({
   name: "workersListSlice",
   initialState: {
     workerList: [] as IWorker[],
+    sortByNameAsc: true,
+    sortByBirthdayAsc: true,
   },
   reducers: {
     setWorkers: (state, action) => {
@@ -20,11 +22,15 @@ export const workerListSlice = createSlice({
       });
     },
     sortWorkerByName: (state) => {
+      state.sortByNameAsc = !state.sortByNameAsc;
       state.workerList = state.workerList.slice().sort((a, b) => {
-        return a.name.localeCompare(b.name);
+        return state.sortByNameAsc
+          ? a.name.localeCompare(b.name)
+          : b.name.localeCompare(a.name);
       });
     },
     sortWorkerByBirthday: (state) => {
+      state.sortByBirthdayAsc = !state.sortByBirthdayAsc;
       state.workerList = state.workerList.slice().sort((a, b) => {
         const dateA = new Date(
           a.birthday.split(".").reverse().join("-")
@@ -32,7 +38,7 @@ export const workerListSlice = createSlice({
         const dateB = new Date(
           b.birthday.split(".").reverse().join("-")
         ).getTime();
-        return dateA - dateB;
+        return state.sortByBirthdayAsc ? dateA - dateB : dateB - dateA;
       });
     },
     addToArchive: (state, action) => {
