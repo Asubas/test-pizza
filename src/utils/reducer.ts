@@ -3,18 +3,18 @@ import { IWorker } from "../types/workerInterface";
 type State = {
   workers: IWorker[];
   selectedJob: string;
-  showArchived: boolean;
+  showArchived: string;
 };
 
 type Action =
   | { type: "initialWorkers"; payload: IWorker[] }
   | { type: "filteredByJob"; payload: string }
-  | { type: "filteredByArchive" };
+  | { type: "filteredByArchive"; payload: string };
 
 const initialState: State = {
   workers: [],
   selectedJob: "",
-  showArchived: true,
+  showArchived: "",
 };
 
 function reducer(state: State, action: Action): State {
@@ -24,7 +24,7 @@ function reducer(state: State, action: Action): State {
     case "filteredByJob":
       return { ...state, selectedJob: action.payload };
     case "filteredByArchive":
-      return { ...state, showArchived: !state.showArchived };
+      return { ...state, showArchived: action.payload };
     default:
       return state;
   }

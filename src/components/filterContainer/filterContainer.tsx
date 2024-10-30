@@ -6,10 +6,15 @@ const FilterContainer = memo(
     filterByArchive,
   }: {
     filterByJob: (job: string) => void;
-    filterByArchive: () => void;
+    filterByArchive: (inArchive: string) => void;
   }) => {
     const handleSortByJob = (event: React.ChangeEvent<HTMLSelectElement>) => {
       filterByJob(event.target.value);
+    };
+    const handleSortByArchive = (
+      event: React.ChangeEvent<HTMLSelectElement>
+    ) => {
+      filterByArchive(event.target.value);
     };
 
     return (
@@ -21,9 +26,11 @@ const FilterContainer = memo(
           <option value="waiter">Официант</option>
           <option value="driver">Водитель</option>
         </select>
-        <button type="button" onClick={filterByArchive}>
-          Сортировать по архиву
-        </button>
+        <select name="city" id="archive" onChange={handleSortByArchive}>
+          <option value="">-- Сортировтаь по архиву --</option>
+          <option value="inArchive">В архиве</option>
+          <option value="noArchive">Не в архиве</option>
+        </select>
       </div>
     );
   }

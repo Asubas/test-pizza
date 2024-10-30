@@ -7,7 +7,7 @@ function NewWorker() {
     (state: RootState) => state.workers.workerList
   );
 
-  return <WorkerForm lastWorkerNumber={lastWorkerNumber.length} />;
+  return <WorkerForm lastWorkerNumber={lastWorkerNumber.length + 1} />;
 }
 
 export { NewWorker };

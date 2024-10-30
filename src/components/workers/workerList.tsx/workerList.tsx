@@ -21,17 +21,19 @@ const WorkerList = memo(() => {
     dispatchReducer({ type: "filteredByJob", payload: job });
   }, []);
 
-  const filterByArchive = useCallback(() => {
-    dispatchReducer({ type: "filteredByArchive" });
+  const filterByArchive = useCallback((inArchive: string) => {
+    dispatchReducer({ type: "filteredByArchive", payload: inArchive });
   }, []);
 
   const arrayWorkers = stateReducer.workers.filter((worker) => {
     const jobFilter =
       !stateReducer.selectedJob ||
       worker.role.includes(stateReducer.selectedJob);
-    const archiveMatch = stateReducer.showArchived
-      ? worker.isArchive
-      : !worker.isArchive;
+    const archiveMatch =
+      (stateReducer.showArchived === "inArchive" && worker.isArchive) ||
+      (stateReducer.showArchived === "noArchive" && !worker.isArchive) ||
+      stateReducer.showArchived === "";
+
     return jobFilter && archiveMatch;
   });
 
