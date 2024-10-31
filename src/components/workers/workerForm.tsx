@@ -49,6 +49,7 @@ function WorkerForm({
               "Имя пользователя должно начинаться с буквы и быть минимум 2 символа",
           },
         })}
+        id="name"
         type="text"
         placeholder="Введите имя"
         defaultValue={worker ? worker.name : ""}
@@ -68,6 +69,7 @@ function WorkerForm({
             return true;
           },
         })}
+        id="birthday"
         type="date"
         placeholder="Введите дату рождения"
         defaultValue={
@@ -84,6 +86,7 @@ function WorkerForm({
             message: "Введите номер телефона в формате +7 или начиная с 8",
           },
         })}
+        id="phone"
         type="tel"
         placeholder="Введите номер телефона"
         defaultValue={worker ? worker.phone : ""}

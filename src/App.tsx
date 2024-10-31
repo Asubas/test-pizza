@@ -13,12 +13,8 @@ function App() {
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        const workersData = await workerList();
-        dispatch(setWorkers(workersData));
-      } catch (error) {
-        console.log(error);
-      }
+      const workersData = await workerList();
+      dispatch(setWorkers(workersData));
     };
     fetchData();
   }, [dispatch]);
