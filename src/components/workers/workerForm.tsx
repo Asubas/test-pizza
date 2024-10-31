@@ -4,6 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { addWorker, editWorker } from "../../app/workesListSlice";
 import { INewWorker, IWorker } from "../../types/workerInterface";
 import { useDispatch } from "react-redux";
+import { toast } from "react-toastify";
+import { successWorker, errorSubmitForm } from "../../utils/toastOption";
 
 function WorkerForm({
   edit = false,
@@ -28,13 +30,19 @@ function WorkerForm({
       if (!edit) {
         data.id = lastWorkerNumber;
         dispatch(addWorker(data));
+        toast.success("Данные сотрудника успешно добавлены!", successWorker);
       } else if (edit) {
         data.id = worker?.id;
         dispatch(editWorker({ id: worker?.id, editWorker: { ...data } }));
+        toast.success("Данные сотрудника успешно изменены!", successWorker);
       }
       navigate("/");
     } catch (error) {
-      console.log(error);
+      toast.error(
+        "Ошибка отправки формы!Что то пошло не так!",
+        errorSubmitForm
+      );
+      console.error("Ошибка", error);
     }
   };
 

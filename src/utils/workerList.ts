@@ -1,4 +1,6 @@
+import { toast } from "react-toastify";
 import { IWorker } from "../types/workerInterface";
+import { errorDownloadFile } from "./toastOption";
 
 async function workerList() {
   return fetch("../employees.json")
@@ -12,6 +14,7 @@ async function workerList() {
       return resData as IWorker[];
     })
     .catch((error) => {
+      toast.error("Ошибка загрузки файла сотрудников!", errorDownloadFile);
       console.error("Ошибка:", error);
       return [];
     });

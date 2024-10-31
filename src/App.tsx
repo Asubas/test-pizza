@@ -7,6 +7,8 @@ import { setWorkers } from "./app/workesListSlice";
 import { workerList } from "./utils/workerList";
 import { NewWorker } from "./components/workers/newWorker/newWorker";
 import { WorkerList } from "./components/workers/workerList/workerList";
+import { Bounce, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const dispatch = useDispatch();
@@ -20,12 +22,27 @@ function App() {
   }, [dispatch]);
 
   return (
-    <Routes>
-      <Route path="/" element={<WorkerList />} />
-      <Route path="worker/:id" element={<EditWorker />} />
-      <Route path="worker/new" element={<NewWorker />} />
-      <Route path="*" element={<ErrorPage />} />
-    </Routes>
+    <>
+      <Routes>
+        <Route path="/" element={<WorkerList />} />
+        <Route path="worker/:id" element={<EditWorker />} />
+        <Route path="worker/new" element={<NewWorker />} />
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        transition={Bounce}
+      />
+    </>
   );
 }
 
