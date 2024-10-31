@@ -9,7 +9,7 @@ import {
 } from "../../../app/workersListSlice";
 import { ChangeEvent, useCallback } from "react";
 import { selectFilteredWorkers } from "../../../utils/createSelector";
-import { MemoizedLink } from "./MemoizedLink";
+import { MemoizedLink } from "./memoizedLink";
 
 const WorkerList = () => {
   const dispatch = useDispatch();
@@ -47,7 +47,7 @@ const WorkerList = () => {
               filterByArchive={handleArchiveFilter}
             />
             <MemoizedLink to={"/worker/new"} className={"newWorker-link"}>
-              Добавить нового работника
+              Добавить нового сотрудника
             </MemoizedLink>
           </div>
           <ul className="worker-list">
@@ -75,7 +75,7 @@ const WorkerList = () => {
           </ul>
         </div>
       ) : (
-        <div>Список работников пустой!</div>
+        <div>Список сотрудников пустой!</div>
       )}
     </>
   );

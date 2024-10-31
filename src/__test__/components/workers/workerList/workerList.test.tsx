@@ -89,6 +89,6 @@ describe("", () => {
       </BrowserRouter>
     );
 
-    expect(screen.getByText("Список работников пустой!")).toBeInTheDocument();
+    expect(screen.getByText("Список сотрудников пустой!")).toBeInTheDocument();
   });
 });

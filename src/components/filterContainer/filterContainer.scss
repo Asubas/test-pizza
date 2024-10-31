@@ -1,5 +1,5 @@
-@use "../../App.scss" as *;
+@use "../../App.scss" as app;
 
 .sort-section-select {
-  @include flex-positioning(center, center, column);
+  @include app.flex-positioning(center, center, column);
 }

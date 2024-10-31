@@ -12,7 +12,7 @@ function EditWorker() {
   if (!editWorker) {
     return (
       <div>
-        <p>Работник не найден</p>
+        <p>Сотрудник не найден</p>
         <Link to={"/"}>На главную</Link>
       </div>
     );

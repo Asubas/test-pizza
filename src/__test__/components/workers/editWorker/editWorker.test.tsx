@@ -14,6 +14,6 @@ describe("Should correct render component EditWorker", () => {
         </Provider>
       </BrowserRouter>
     );
-    expect(screen.getByText("Работник не найден"));
+    expect(screen.getByText("Сотрудник не найден"));
   });
 });
