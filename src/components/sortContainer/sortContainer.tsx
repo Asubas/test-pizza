@@ -3,18 +3,18 @@ import { memo, useCallback } from "react";
 import {
   sortWorkerByBirthday,
   sortWorkerByName,
-} from "../../app/workesListSlice";
+} from "../../app/workersListSlice";
 
 const SortContainer = memo(() => {
   const dispatch = useDispatch();
 
   const handleSortByName = useCallback(
     () => dispatch(sortWorkerByName()),
-    [dispatch],
+    [dispatch]
   );
   const handleSortByBirthday = useCallback(
     () => dispatch(sortWorkerByBirthday()),
-    [dispatch],
+    [dispatch]
   );
 
   return (

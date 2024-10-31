@@ -4,7 +4,7 @@ import "@testing-library/jest-dom";
 import { Provider } from "react-redux";
 import { MemoryRouter } from "react-router-dom";
 import configureStore from "redux-mock-store";
-import { addWorker, editWorker } from "../../../app/workesListSlice";
+import { addWorker, editWorker } from "../../../app/workersListSlice";
 
 const testWorker = {
   id: 15,

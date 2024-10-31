@@ -5,6 +5,8 @@ export const workerListSlice = createSlice({
   name: "workersListSlice",
   initialState: {
     workerList: [] as IWorker[],
+    selectedJob: "",
+    showArchived: "",
     sortByNameAsc: true,
     sortByBirthdayAsc: true,
   },
@@ -33,10 +35,10 @@ export const workerListSlice = createSlice({
       state.sortByBirthdayAsc = !state.sortByBirthdayAsc;
       state.workerList = state.workerList.slice().sort((a, b) => {
         const dateA = new Date(
-          a.birthday.split(".").reverse().join("-"),
+          a.birthday.split(".").reverse().join("-")
         ).getTime();
         const dateB = new Date(
-          b.birthday.split(".").reverse().join("-"),
+          b.birthday.split(".").reverse().join("-")
         ).getTime();
         return state.sortByBirthdayAsc ? dateA - dateB : dateB - dateA;
       });
@@ -50,6 +52,12 @@ export const workerListSlice = createSlice({
         return worker;
       });
     },
+    filterByJob: (state, action) => {
+      state.selectedJob = action.payload;
+    },
+    filterByArchive: (state, action) => {
+      state.showArchived = action.payload;
+    },
   },
 });
 
@@ -60,6 +68,8 @@ export const {
   sortWorkerByBirthday,
   sortWorkerByName,
   addToArchive,
+  filterByJob,
+  filterByArchive,
 } = workerListSlice.actions;
 
 export default workerListSlice.reducer;

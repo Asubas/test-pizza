@@ -3,15 +3,17 @@ import { Link } from "react-router-dom";
 import { SortContainer } from "../../sortContainer/sortContainer";
 import { useDispatch, useSelector } from "react-redux";
 import { FilterContainer } from "../../filterContainer/filterContainer";
-import { addToArchive } from "../../../app/workesListSlice";
-import { ChangeEvent, memo, useCallback, useEffect, useReducer } from "react";
-import { RootState } from "../../../app/store";
-import { initialState, reducer } from "../../../utils/reducer";
+import {
+  addToArchive,
+  filterByJob,
+  filterByArchive,
+} from "../../../app/workersListSlice";
+import { ChangeEvent, useCallback } from "react";
+import { selectFilteredWorkers } from "../../../utils/createSelector";
 
-const WorkerList = memo(() => {
-  const workers = useSelector((state: RootState) => state.workers.workerList);
+const WorkerList = () => {
   const dispatch = useDispatch();
-  const [stateReducer, dispatchReducer] = useReducer(reducer, initialState);
+  const filteredWorkers = useSelector(selectFilteredWorkers);
 
   const handleClickArchive = useCallback(
     (event: ChangeEvent<HTMLInputElement>) => {
@@ -20,48 +22,36 @@ const WorkerList = memo(() => {
     [dispatch]
   );
 
-  const filterByJob = useCallback((job: string) => {
-    dispatchReducer({ type: "filteredByJob", payload: job });
-  }, []);
+  const handleJobFilter = useCallback(
+    (job: string) => {
+      dispatch(filterByJob(job));
+    },
+    [dispatch]
+  );
 
-  const filterByArchive = useCallback((inArchive: string) => {
-    dispatchReducer({ type: "filteredByArchive", payload: inArchive });
-  }, []);
-
-  const arrayWorkers = stateReducer.workers.filter((worker) => {
-    const jobFilter =
-      !stateReducer.selectedJob ||
-      worker.role.includes(stateReducer.selectedJob);
-    const archiveMatch =
-      (stateReducer.showArchived === "inArchive" && worker.isArchive) ||
-      (stateReducer.showArchived === "noArchive" && !worker.isArchive) ||
-      stateReducer.showArchived === "";
-
-    return jobFilter && archiveMatch;
-  });
-
-  useEffect(() => {
-    if (workers.length > 0) {
-      dispatchReducer({ type: "initialWorkers", payload: workers });
-    }
-  }, [workers]);
+  const handleArchiveFilter = useCallback(
+    (inArchive: string) => {
+      dispatch(filterByArchive(inArchive));
+    },
+    [dispatch]
+  );
 
   return (
     <>
-      {arrayWorkers ? (
+      {filteredWorkers && filteredWorkers.length > 0 ? (
         <div className="app-container">
           <div className="sort-section">
             <SortContainer />
             <FilterContainer
-              filterByJob={filterByJob}
-              filterByArchive={filterByArchive}
+              filterByJob={handleJobFilter}
+              filterByArchive={handleArchiveFilter}
             />
             <Link className="newWorker-link" to={"/worker/new"}>
               Добавить нового работника
             </Link>
           </div>
           <ul className="worker-list">
-            {arrayWorkers.map((element) => (
+            {filteredWorkers.map((element) => (
               <li key={element.id}>
                 <Link className="worker-name" to={`/worker/${element.id}`}>
                   {element.name}
@@ -86,6 +76,6 @@ const WorkerList = memo(() => {
       )}
     </>
   );
-});
+};
 
 export { WorkerList };

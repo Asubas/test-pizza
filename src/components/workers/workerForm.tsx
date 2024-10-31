@@ -1,7 +1,7 @@
 import "./workerForm.scss";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
-import { addWorker, editWorker } from "../../app/workesListSlice";
+import { addWorker, editWorker } from "../../app/workersListSlice";
 import { INewWorker, IWorker } from "../../types/workerInterface";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";

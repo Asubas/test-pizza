@@ -6,7 +6,7 @@ import configureStore from "redux-mock-store";
 import {
   sortWorkerByBirthday,
   sortWorkerByName,
-} from "../../../app/workesListSlice";
+} from "../../../app/workersListSlice";
 
 const mockStore = configureStore();
 describe("Test sort container component", () => {

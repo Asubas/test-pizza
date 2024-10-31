@@ -3,7 +3,7 @@ import { EditWorker } from "./components/workers/editWorker/editWorker";
 import { ErrorPage } from "./error-page";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { setWorkers } from "./app/workesListSlice";
+import { setWorkers } from "./app/workersListSlice";
 import { workerList } from "./utils/workerList";
 import { NewWorker } from "./components/workers/newWorker/newWorker";
 import { WorkerList } from "./components/workers/workerList/workerList";
