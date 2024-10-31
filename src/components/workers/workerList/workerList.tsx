@@ -1,5 +1,4 @@
 import "./workerList.scss";
-import { Link } from "react-router-dom";
 import { SortContainer } from "../../sortContainer/sortContainer";
 import { useDispatch, useSelector } from "react-redux";
 import { FilterContainer } from "../../filterContainer/filterContainer";
@@ -10,6 +9,7 @@ import {
 } from "../../../app/workersListSlice";
 import { ChangeEvent, useCallback } from "react";
 import { selectFilteredWorkers } from "../../../utils/createSelector";
+import { MemoizedLink } from "./MemoizedLink";
 
 const WorkerList = () => {
   const dispatch = useDispatch();
@@ -46,16 +46,19 @@ const WorkerList = () => {
               filterByJob={handleJobFilter}
               filterByArchive={handleArchiveFilter}
             />
-            <Link className="newWorker-link" to={"/worker/new"}>
+            <MemoizedLink to={"/worker/new"} className={"newWorker-link"}>
               Добавить нового работника
-            </Link>
+            </MemoizedLink>
           </div>
           <ul className="worker-list">
             {filteredWorkers.map((element) => (
               <li key={element.id}>
-                <Link className="worker-name" to={`/worker/${element.id}`}>
+                <MemoizedLink
+                  className={"worker-name"}
+                  to={`/worker/${element.id}`}
+                >
                   {element.name}
-                </Link>
+                </MemoizedLink>
                 <label className="worker-archived" htmlFor={`${element.id}`}>
                   архив
                   <input
