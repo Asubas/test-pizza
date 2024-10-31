@@ -5,7 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import { store } from "../../../../app/store";
 import { NewWorker } from "../../../../components/workers/newWorker/newWorker";
 
-describe("Should correct render component EditWorker", () => {
+describe("Should correct render component NewWorker", () => {
   test("Should return correct page without worker", () => {
     render(
       <BrowserRouter>

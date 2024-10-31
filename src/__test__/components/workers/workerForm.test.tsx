@@ -35,8 +35,7 @@ describe("Should correct render component WorkerForm", () => {
   });
 
   test("Should correct submit testWorker for new testWorker", async () => {
-    const initialState = { testWorker };
-    const store = mockStore(initialState);
+    const store = mockStore({ testWorker });
     store.dispatch(addWorker(testWorker));
 
     fireEvent.submit(
@@ -61,8 +60,7 @@ describe("Should correct render component WorkerForm", () => {
   });
 
   test("Should correct submit testWorker for edit testWorker", async () => {
-    const initialState = { testWorker };
-    const store = mockStore(initialState);
+    const store = mockStore({ testWorker });
     render(
       <MemoryRouter>
         <Provider store={store}>

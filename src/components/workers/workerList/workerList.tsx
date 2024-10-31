@@ -67,7 +67,7 @@ const WorkerList = memo(() => {
                   {element.name}
                 </Link>
                 <label className="worker-archived" htmlFor={`${element.id}`}>
-                  Архив
+                  архив
                   <input
                     id={`${element.id}`}
                     type="checkbox"
