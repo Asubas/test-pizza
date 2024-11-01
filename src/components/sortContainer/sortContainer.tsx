@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { memo, useCallback } from "react";
+import { memo } from "react";
 import {
   sortWorkerByBirthday,
   sortWorkerByName,
@@ -8,15 +8,8 @@ import {
 const SortContainer = memo(() => {
   const dispatch = useDispatch();
 
-  const handleSortByName = useCallback(
-    () => dispatch(sortWorkerByName()),
-    [dispatch]
-  );
-  const handleSortByBirthday = useCallback(
-    () => dispatch(sortWorkerByBirthday()),
-    [dispatch]
-  );
-
+  const handleSortByName = () => dispatch(sortWorkerByName());
+  const handleSortByBirthday = () => dispatch(sortWorkerByBirthday());
   return (
     <>
       <button type="button" onClick={handleSortByName}>

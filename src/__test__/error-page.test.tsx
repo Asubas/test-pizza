@@ -11,7 +11,7 @@ describe("Render ErrorPage component", () => {
       <Provider store={store}>
         <ErrorPage />
       </Provider>
-    </BrowserRouter>
+    </BrowserRouter>,
   );
 
   test("Should be correct render", () => {

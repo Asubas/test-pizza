@@ -90,13 +90,13 @@ function WorkerForm({
       <input
         {...register("phone", {
           pattern: {
-            value: /^((8|\+7)[ -]?)?(\(?\d{3}\)?[ -]?)?[\d -]{7,10}$/,
+            value: /^(8|\+7)[ -]?(\(?\d{3}\)?[ -]?)[\d -]{7,10}$/,
             message: "Введите номер телефона в формате +7 или начиная с 8",
           },
         })}
         id="phone"
         type="tel"
-        placeholder="Введите номер телефона"
+        placeholder="+7 (999) 999 9999"
         defaultValue={worker ? worker.phone : ""}
         required
       />

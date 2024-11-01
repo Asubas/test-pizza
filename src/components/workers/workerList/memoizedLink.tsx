@@ -16,7 +16,7 @@ const MemoizedLink = memo(
         {children}
       </Link>
     );
-  }
+  },
 );
 
 export { MemoizedLink };

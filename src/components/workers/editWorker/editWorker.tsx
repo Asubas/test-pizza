@@ -6,7 +6,7 @@ import { RootState } from "../../../app/store";
 function EditWorker() {
   const { id } = useParams();
   const workerList = useSelector(
-    (state: RootState) => state.workers.workerList
+    (state: RootState) => state.workers.workerList,
   );
   const editWorker = workerList.find((worker) => worker.id === Number(id));
   if (!editWorker) {

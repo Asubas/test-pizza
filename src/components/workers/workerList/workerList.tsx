@@ -15,25 +15,21 @@ const WorkerList = () => {
   const dispatch = useDispatch();
   const filteredWorkers = useSelector(selectFilteredWorkers);
 
-  const handleClickArchive = useCallback(
-    (event: ChangeEvent<HTMLInputElement>) => {
-      dispatch(addToArchive(Number(event.target.id)));
-    },
-    [dispatch]
-  );
-
+  const handleClickArchive = (event: ChangeEvent<HTMLInputElement>) => {
+    dispatch(addToArchive(Number(event.target.id)));
+  };
   const handleJobFilter = useCallback(
     (job: string) => {
       dispatch(filterByJob(job));
     },
-    [dispatch]
+    [dispatch],
   );
 
   const handleArchiveFilter = useCallback(
     (inArchive: string) => {
       dispatch(filterByArchive(inArchive));
     },
-    [dispatch]
+    [dispatch],
   );
 
   return (

@@ -29,7 +29,7 @@ describe("Test from workList function", () => {
     expect(result).toEqual([]);
     expect(consoleError).toHaveBeenCalledWith(
       "Ошибка:",
-      new Error(errorMessage)
+      new Error(errorMessage),
     );
     consoleError.mockRestore();
   });

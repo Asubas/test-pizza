@@ -35,10 +35,10 @@ export const workerListSlice = createSlice({
       state.sortByBirthdayAsc = !state.sortByBirthdayAsc;
       state.workerList = state.workerList.slice().sort((a, b) => {
         const dateA = new Date(
-          a.birthday.split(".").reverse().join("-")
+          a.birthday.split(".").reverse().join("-"),
         ).getTime();
         const dateB = new Date(
-          b.birthday.split(".").reverse().join("-")
+          b.birthday.split(".").reverse().join("-"),
         ).getTime();
         return state.sortByBirthdayAsc ? dateA - dateB : dateB - dateA;
       });

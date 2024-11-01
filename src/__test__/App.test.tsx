@@ -31,7 +31,7 @@ describe("Render App component", () => {
       <Provider store={store}>
         <App />
       </Provider>
-    </BrowserRouter>
+    </BrowserRouter>,
   );
 
   test("Should be correct render", () => {

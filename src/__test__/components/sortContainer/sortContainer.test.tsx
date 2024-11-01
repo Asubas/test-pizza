@@ -17,7 +17,7 @@ describe("Test sort container component", () => {
     render(
       <Provider store={store}>
         <SortContainer />
-      </Provider>
+      </Provider>,
     );
   });
 

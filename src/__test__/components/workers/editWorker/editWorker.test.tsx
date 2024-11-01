@@ -12,7 +12,7 @@ describe("Should correct render component EditWorker", () => {
         <Provider store={store}>
           <EditWorker />
         </Provider>
-      </BrowserRouter>
+      </BrowserRouter>,
     );
     expect(screen.getByText("Сотрудник не найден"));
   });

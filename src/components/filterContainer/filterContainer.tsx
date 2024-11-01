@@ -1,5 +1,5 @@
 import "./filterContainer.scss";
-import { memo, useCallback } from "react";
+import { memo } from "react";
 
 const FilterContainer = memo(
   ({
@@ -9,19 +9,14 @@ const FilterContainer = memo(
     filterByJob: (job: string) => void;
     filterByArchive: (inArchive: string) => void;
   }) => {
-    const handleSortByJob = useCallback(
-      (event: React.ChangeEvent<HTMLSelectElement>) => {
-        filterByJob(event.target.value);
-      },
-      [filterByJob]
-    );
-    const handleSortByArchive = useCallback(
-      (event: React.ChangeEvent<HTMLSelectElement>) => {
-        filterByArchive(event.target.value);
-      },
-      [filterByArchive]
-    );
-
+    const handleSortByJob = (event: React.ChangeEvent<HTMLSelectElement>) => {
+      filterByJob(event.target.value);
+    };
+    const handleSortByArchive = (
+      event: React.ChangeEvent<HTMLSelectElement>,
+    ) => {
+      filterByArchive(event.target.value);
+    };
     return (
       <div className="sort-section-select">
         <label htmlFor="job">Должность</label>
@@ -39,7 +34,7 @@ const FilterContainer = memo(
         </select>
       </div>
     );
-  }
+  },
 );
 
 export { FilterContainer };

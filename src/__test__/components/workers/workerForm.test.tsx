@@ -26,7 +26,7 @@ describe("Should correct render component WorkerForm", () => {
         <Provider store={store}>
           <WorkerForm worker={testWorker} />
         </Provider>
-      </MemoryRouter>
+      </MemoryRouter>,
     );
   });
 
@@ -39,7 +39,7 @@ describe("Should correct render component WorkerForm", () => {
     store.dispatch(addWorker(testWorker));
 
     fireEvent.submit(
-      screen.getByRole("button", { name: "Добавить сотрудника" })
+      screen.getByRole("button", { name: "Добавить сотрудника" }),
     );
     const actions = store.getActions();
     expect(actions).toHaveLength(1);
@@ -66,7 +66,7 @@ describe("Should correct render component WorkerForm", () => {
         <Provider store={store}>
           <WorkerForm edit={true} lastWorkerNumber={17} worker={testWorker} />
         </Provider>
-      </MemoryRouter>
+      </MemoryRouter>,
     );
     store.dispatch(editWorker(testWorker));
     fireEvent.submit(screen.getByRole("button", { name: "Изменить данные" }));
@@ -95,10 +95,10 @@ describe("Should correct render component WorkerForm", () => {
       },
     });
     fireEvent.submit(
-      screen.getByRole("button", { name: "Добавить сотрудника" })
+      screen.getByRole("button", { name: "Добавить сотрудника" }),
     );
     expect(
-      await screen.findByText("Выберите дату до 2020-12-31")
+      await screen.findByText("Выберите дату до 2020-12-31"),
     ).toBeInTheDocument();
   });
 
@@ -109,10 +109,10 @@ describe("Should correct render component WorkerForm", () => {
       },
     });
     fireEvent.submit(
-      screen.getByRole("button", { name: "Добавить сотрудника" })
+      screen.getByRole("button", { name: "Добавить сотрудника" }),
     );
     expect(
-      await screen.findByText("Выберите дату после 1960-01-01")
+      await screen.findByText("Выберите дату после 1960-01-01"),
     ).toBeInTheDocument();
   });
 });

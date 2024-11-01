@@ -41,7 +41,7 @@ describe("WorkerList Component", () => {
         <Provider store={store}>
           <WorkerList />
         </Provider>
-      </BrowserRouter>
+      </BrowserRouter>,
     );
   });
 
@@ -86,7 +86,7 @@ describe("", () => {
         <Provider store={emptyStore}>
           <WorkerList />
         </Provider>
-      </BrowserRouter>
+      </BrowserRouter>,
     );
 
     expect(screen.getByText("Список сотрудников пустой!")).toBeInTheDocument();

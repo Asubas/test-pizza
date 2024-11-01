@@ -10,7 +10,7 @@ describe("Test filter container component", () => {
       <FilterContainer
         filterByJob={mockFilterByJob}
         filterByArchive={mockFilterByArchive}
-      />
+      />,
     );
   });
 
@@ -21,7 +21,7 @@ describe("Test filter container component", () => {
 
     expect(
       (screen.getByRole("option", { name: "Повар" }) as HTMLOptionElement)
-        .selected
+        .selected,
     ).toBeTruthy();
     expect(screen.getByText("Должность")).toBeInTheDocument();
   });
@@ -33,7 +33,7 @@ describe("Test filter container component", () => {
 
     expect(
       (screen.getByRole("option", { name: "В архиве" }) as HTMLOptionElement)
-        .selected
+        .selected,
     ).toBeTruthy();
   });
 });

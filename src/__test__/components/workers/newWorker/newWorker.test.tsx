@@ -12,7 +12,7 @@ describe("Should correct render component NewWorker", () => {
         <Provider store={store}>
           <NewWorker />
         </Provider>
-      </BrowserRouter>
+      </BrowserRouter>,
     );
     expect(screen.getByText("Введите имя сотрудника"));
   });
