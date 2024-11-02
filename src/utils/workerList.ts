@@ -13,9 +13,8 @@ async function workerList() {
     .then((resData) => {
       return resData as IWorker[];
     })
-    .catch((error) => {
+    .catch(() => {
       toast.error("Ошибка загрузки файла сотрудников!", errorDownloadFile);
-      console.error("Ошибка:", error);
       return [];
     });
 }

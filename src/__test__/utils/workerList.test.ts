@@ -17,7 +17,6 @@ describe("Test from workList function", () => {
   });
 
   test("Should return error", async () => {
-    const errorMessage = "Ошибка при получении данных: Not Found";
     const consoleError = jest
       .spyOn(console, "error")
       .mockImplementation(() => {});
@@ -27,10 +26,7 @@ describe("Test from workList function", () => {
     });
     const result = await workerList();
     expect(result).toEqual([]);
-    expect(consoleError).toHaveBeenCalledWith(
-      "Ошибка:",
-      new Error(errorMessage),
-    );
+
     consoleError.mockRestore();
   });
 });

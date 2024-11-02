@@ -17,5 +17,5 @@ export const selectFilteredWorkers = createSelector(
 
       return jobFilter && archiveMatch;
     });
-  },
+  }
 );
