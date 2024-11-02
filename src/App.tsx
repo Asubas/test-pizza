@@ -1,3 +1,4 @@
+import "./app.scss";
 import { Route, Routes } from "react-router-dom";
 import { EditWorker } from "./components/workers/editWorker/editWorker";
 import { ErrorPage } from "./error-page";

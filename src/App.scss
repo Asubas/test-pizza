@@ -1,30 +1,12 @@
-$background-color: #6a6a6a;
-$text-color: #000000;
-$container-color: #d9d9d9;
-$second-color: #f0f0f0;
-$hover-color: #f9fffa;
-
-@mixin position-center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+@use "./mixin.scss" as *;
+body {
+  background-color: $background-color;
+  color: $text-color;
 }
 
-@mixin full-size {
-  width: 100%;
-  height: 100%;
-}
-
-@mixin flex-positioning(
-  $justify-content: center,
-  $align-items: center,
-  $flex-direction: row
-) {
-  display: flex;
-  justify-content: $justify-content;
-  align-items: $align-items;
-  flex-direction: $flex-direction;
+* {
+  box-sizing: border-box;
+  border-radius: 0.5rem;
 }
 
 html {
@@ -36,16 +18,6 @@ html {
   @media (max-width: 460px) {
     font-size: 40%;
   }
-}
-
-body {
-  background-color: $background-color;
-  color: $text-color;
-}
-
-* {
-  box-sizing: border-box;
-  border-radius: 0.5rem;
 }
 
 ul {

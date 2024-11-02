@@ -1,11 +1,11 @@
 import { useDispatch } from "react-redux";
-import { memo } from "react";
+
 import {
   sortWorkerByBirthday,
   sortWorkerByName,
 } from "../../app/workersListSlice";
 
-const SortContainer = memo(() => {
+const SortContainer = () => {
   const dispatch = useDispatch();
 
   const handleSortByName = () => dispatch(sortWorkerByName());
@@ -20,6 +20,6 @@ const SortContainer = memo(() => {
       </button>
     </>
   );
-});
+};
 
 export { SortContainer };

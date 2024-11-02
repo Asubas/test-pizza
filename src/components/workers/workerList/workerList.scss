@@ -1,4 +1,4 @@
-@use "../../../App.scss" as app;
+@use "../../../mixin.scss" as app;
 
 .app-container {
   @include app.flex-positioning(center, center, column);

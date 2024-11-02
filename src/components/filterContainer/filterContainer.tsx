@@ -13,7 +13,7 @@ const FilterContainer = memo(
       filterByJob(event.target.value);
     };
     const handleSortByArchive = (
-      event: React.ChangeEvent<HTMLSelectElement>,
+      event: React.ChangeEvent<HTMLSelectElement>
     ) => {
       filterByArchive(event.target.value);
     };
@@ -34,7 +34,7 @@ const FilterContainer = memo(
         </select>
       </div>
     );
-  },
+  }
 );
 
 export { FilterContainer };
