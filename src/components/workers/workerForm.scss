@@ -1,0 +1,42 @@
+@use "../../mixin.scss" as app;
+
+.workerForm-form {
+  @include app.flex-positioning(center, center, column);
+  gap: 0.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  padding: 0.75rem;
+  font-size: 0.75rem;
+  text-align: center;
+  border: 1.5px solid black;
+  background-color: app.$container-color;
+
+  input {
+    width: 100%;
+    padding: 0.25rem;
+  }
+
+  span {
+    color: red;
+  }
+
+  .workerForm-checkbox {
+    @include app.flex-positioning;
+    cursor: pointer;
+
+    & input {
+      cursor: pointer;
+    }
+
+    @media (max-width: 460px) {
+      font-size: 150%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    width: auto;
+  }
+}
